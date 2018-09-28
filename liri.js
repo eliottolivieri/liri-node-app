@@ -2,17 +2,17 @@
 require("dotenv").config();
 
 var keys = require("./keys.js");
-var Sportify = require("node-spotify-api");
+var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
 var request = require("request");
-var twitter = require("twitter");
+var Twitter = require("twitter");
 var client = new Twitter(keys.twitter);
 var contentType = process.argv[2];
 var nameOfMovie = process.argv[1];
 
 switch(contentType){
     case "my-tweets":
-    myTweets();
+    console.log(myTweets());
     break;
 
     case "spotify-this-song":
@@ -20,7 +20,7 @@ switch(contentType){
     break;
 
     case "movie-this":
-    movieThis();
+    console.log(movieThis());
 
     case "do-what-it-says":
     doWhatItSays();
@@ -30,3 +30,16 @@ switch(contentType){
 
 };
 
+function myTweets(){
+    return("You wanna see my Tweets??");
+}
+
+function spotifyThisSong(){
+    return("You wanna see my Songs??");
+}
+function movieThis(){
+    return("You wanna see my Movies??");
+}
+function doWhatItSays(){
+    return("I dont even know");
+}
